@@ -8,4 +8,5 @@ public class Bank extends Player {
 		setName( name );
 		setMoney( BANK_START_MONEY );
 	}
+	
 }
