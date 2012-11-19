@@ -68,11 +68,11 @@ public class Board {
 	
 	
 	public String toString() {
-		String str = "";
+		String str = "Board:";
 		for ( int n = 0; n < 40; n++ ) {
-			str += "\n" + n;
+			str += "\n" + "Pos " + n + ": " ;
 			if ( positions[n] != null ) 
-				str += "\n" +  positions[n].toString();
+				str +=  positions[n].toString();
 		}
 		return str;
 	}

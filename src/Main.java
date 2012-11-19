@@ -16,7 +16,7 @@ public class Main {
 		Player player1 = new HumanPlayer("Peter");
 		bank = new Bank("Bank");
 		
-		MachinePlayer p1 = new MachinePlayer( "P1" );
+		MachinePlayer p1 = new MachinePlayer( "MP1" );
 		board = new Board();
 		System.out.println( board.toString() );
 		System.out.println( "Player 1: \n" + player1.toString() );
