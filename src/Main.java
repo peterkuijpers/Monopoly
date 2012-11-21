@@ -36,13 +36,23 @@ public class Main {
 				System.out.println();				
 				System.out.println( "Player: " +  player.getName() + ", Money: " + player.getMoneyStatus()  );
 				do {
-					Menu.doContinue();
-					result = ((BoardPlayer)player).doTurn();
-					//System.out.println( "Player 1: \n" + player1.toString() );
-					int position = ((BoardPlayer)player).getPosition();
-					System.out.println( "Position: " + position  );
-					System.out.println( board.getPosition(position).toString() );
-					propertyOwnership( player, position );
+					result = true;
+					int option = Menu.getOptionMenu();
+					if (option  == Menu.Roll) {
+						result = ((BoardPlayer)player).doTurn();
+						//System.out.println( "Player 1: \n" + player1.toString() );
+						int position = ((BoardPlayer)player).getPosition();
+						System.out.println( "Position: " + position  );
+						System.out.println( board.getPosition(position).toString() );
+						propertyOwnership( player, position );
+					}
+					else if (option == Menu.Overview ) {
+						System.out.println(player.toString() );					
+					}
+					else if (option == Menu.Quit ) {
+						result = false;
+					}
+
 				} while (result == true );
 			}
 		}
