@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 
 public class Board {
 		
@@ -7,7 +9,6 @@ public class Board {
 		positions = new Field[40];
 		
 		
-
 		// position 0 is start
 		positions[0] = new Field();
 		positions[1] = new Street( "Mediterranean Avenue", 65, 10, Group.DarkBlue, Main.bank );
@@ -75,5 +76,17 @@ public class Board {
 				str +=  positions[n].toString();
 		}
 		return str;
+	}
+	
+	public ArrayList<Property> getPropertiesForPlayer( Player player ) {
+		ArrayList<Property> list = new ArrayList<Property>();
+		for ( int n = 0; n < 40; n++ ) {
+			Field field = positions[n];
+			if ( field instanceof Property) {
+				if ( ((Property)field).getOwner().equals( player ) )
+					list.add( (Property)field );
+			}
+		}
+		return list;
 	}
 }

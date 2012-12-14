@@ -6,18 +6,22 @@ public class Player {
 	
 	public Player() {
 	}
+	
 	public Player( String name ) {
 		this.name = name;
 	}
 	public int getMoneyStatus() {
 		return money;
 	}
+	
 	public void addMoney(  int amount) {
 		this.money += amount;
 	}
+	
 	public void substractMoney( int amount ) {
 		this.money -= amount;
 	}
+	
 	protected void setMoney( int amount ) {
 		this.money = amount;
 	}

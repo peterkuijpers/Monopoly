@@ -34,6 +34,7 @@ public class Property extends Field  implements Group{
 	public void setRentValue( int value ) {
 		rentValue = value;
 	}
+	
 	public int getRentValue() {
 		return rentValue;
 	}
@@ -47,12 +48,20 @@ public class Property extends Field  implements Group{
 	}
 	
 	public String toString() {
-		
 		String strf;
-		strf = String.format("\n%20s %10s %7s %10s %5s %6s %6s" , "Name", "Price", "Group", "Owner", "Rent", "Houses", "Hotels");
+		strf = String.format("%20s %10s %7s %10s %5s %6s %6s" , "Name", "Price", "Group", "Owner", "Rent", "Houses", "Hotels");
 		strf  += String.format("\n%20s %10d %7s %10s %5d %6d %6d", name, purchasePrice, groupCode, owner.getName(), rentValue, 0, 0 );
 		
 		return strf;
 				
+	}
+	
+	public String shortString() {
+		String strf;
+//		strf = String.format("\n%20s %10s %7s %10s %5s %6s %6s" , "Name", "Price", "Group", "Owner", "Rent", "Houses", "Hotels");
+		strf = String.format("%20s %10d %7s %10s %5d %6d %6d", name, purchasePrice, groupCode, owner.getName(), rentValue, 0, 0 );
+		
+		return strf;
+		
 	}
 }

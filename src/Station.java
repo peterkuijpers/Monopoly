@@ -15,9 +15,11 @@ public class Station extends Property implements Group {
 	public void setGroupName( int group ) {
 		this.colorCode = group;
 	}
+	
 	public int getGroupName() {
 		return colorCode;
 	}
+	
 	/*
 	public String toString() {
 		String str = "";

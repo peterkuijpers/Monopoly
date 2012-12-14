@@ -11,5 +11,8 @@ public class Field {
 		return "Field";
 	}
 	
-
+	public String shortString() {
+		return null;
+	}
+	
 }

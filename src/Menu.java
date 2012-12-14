@@ -37,6 +37,34 @@ public class Menu {
 		}
 	
 	}
+
+	public static int getYesNoOverviewMenu( String string ) {
+		boolean correct  = true;
+		
+		InputStreamReader isr = new InputStreamReader( System.in );
+		BufferedReader br = new BufferedReader( isr );
+		while (true) {
+			System.out.print( string + " ");
+			try {
+				String result = br.readLine();
+				if ( ! result.equals( ""  ) ) {
+					char c = result.toUpperCase().charAt(0);
+					if ( c == 'Y' ) return YES;
+					if ( c == 'N' ) return NO;
+					if ( c == 'O' ) return Overview;
+				}
+				System.out.println("Invalid entry. Try again" );
+					
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+	
+	}
+
+	
 	public static void doContinue() {
 		InputStreamReader isr = new InputStreamReader( System.in );
 		BufferedReader br = new BufferedReader( isr );
@@ -53,7 +81,7 @@ public class Menu {
 	public static int getOptionMenu() {
 		InputStreamReader isr = new InputStreamReader( System.in );
 		BufferedReader br = new BufferedReader( isr );
-			System.out.print( "Press Roll, Overview, Quit [ R | O | Q ]");
+			System.out.print( "Press Roll, Overview, Quit [ R | O | Q ] ");
 			try {
 				String line = br.readLine();
 				if ( line.length() == 0 ) 
